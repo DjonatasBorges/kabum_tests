@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.3 (Python 3.10.1 on win32)" generated="20211227 10:14:34.452" rpa="false" schemaversion="2">
+<suite id="s1" name="Tests" source="C:\Users\inter\Desktop\kabum_tests\tests">
+<suite id="s1-s1" name="Iphone Search" source="C:\Users\inter\Desktop\kabum_tests\tests\ iphone_search.robot">
+<test id="s1-s1-t1" name="Cenário: Busca de produtos">
+<kw name="Abrir navegador" library="resource" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=googlechrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20211227 10:14:34.677" level="INFO">Opening browser 'googlechrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20211227 10:14:34.677" endtime="20211227 10:14:35.945"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20211227 10:14:35.946" endtime="20211227 10:14:36.062"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${base_url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20211227 10:14:36.063" level="INFO">Opening url 'https://www.kabum.com.br/'</msg>
+<status status="PASS" starttime="20211227 10:14:36.063" endtime="20211227 10:14:39.187"/>
+</kw>
+<status status="PASS" starttime="20211227 10:14:34.677" endtime="20211227 10:14:39.188"/>
+</kw>
+<kw name="Dado estar na página inicial do site" library="home">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${base_url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20211227 10:14:39.189" level="INFO">Opening url 'https://www.kabum.com.br/'</msg>
+<status status="PASS" starttime="20211227 10:14:39.189" endtime="20211227 10:14:42.000"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>code=document.querySelector("#onetrust-accept-btn-handler").click()</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20211227 10:14:42.001" level="INFO">Executing JavaScript:
+code=document.querySelector("#onetrust-accept-btn-handler").click()
+Without any arguments.</msg>
+<status status="PASS" starttime="20211227 10:14:42.000" endtime="20211227 10:14:42.056"/>
+</kw>
+<status status="PASS" starttime="20211227 10:14:39.188" endtime="20211227 10:14:42.057"/>
+</kw>
+<kw name="Quando efetuar uma busca por &quot;iphone&quot;" library="home" sourcename="Quando efetuar uma busca por &quot;${product}&quot;">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=${input_search}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211227 10:14:42.060" endtime="20211227 10:14:42.102"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>locator=${input_search}</arg>
+<arg>text=${product}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211227 10:14:42.102" level="INFO">Typing text 'iphone' into text field 'id=input-busca'.</msg>
+<status status="PASS" starttime="20211227 10:14:42.102" endtime="20211227 10:14:42.428"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>locator=${btn_search}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20211227 10:14:42.429" level="INFO">Clicking button 'css=#barraBuscaKabum &gt; div &gt; form &gt; button'.</msg>
+<status status="PASS" starttime="20211227 10:14:42.429" endtime="20211227 10:14:42.532"/>
+</kw>
+<status status="PASS" starttime="20211227 10:14:42.059" endtime="20211227 10:14:42.532"/>
+</kw>
+<kw name="Entao deverá visualizar - Você está em: &quot;Celular &amp; Telefone &gt; Smartphones &gt; Apple&quot;" library="home" sourcename="Entao deverá visualizar - Você está em: &quot;${confirm_search}&quot;">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${msg_result_search}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211227 10:14:42.533" endtime="20211227 10:14:44.597"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${msg_result_search}</arg>
+<arg>${confirm_search}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20211227 10:14:44.597" level="INFO">Verifying element 'css=#listingBreadcrumbs &gt; div' contains exact text 'Celular &amp; Telefone &gt; Smartphones &gt; Apple'.</msg>
+<status status="PASS" starttime="20211227 10:14:44.597" endtime="20211227 10:14:44.618"/>
+</kw>
+<status status="PASS" starttime="20211227 10:14:42.533" endtime="20211227 10:14:44.618"/>
+</kw>
+<kw name="Fechar navegador" library="resource" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20211227 10:14:44.619" endtime="20211227 10:14:46.791"/>
+</kw>
+<status status="PASS" starttime="20211227 10:14:44.619" endtime="20211227 10:14:46.791"/>
+</kw>
+<status status="PASS" starttime="20211227 10:14:34.672" endtime="20211227 10:14:46.792"/>
+</test>
+<status status="PASS" starttime="20211227 10:14:34.478" endtime="20211227 10:14:46.793"/>
+</suite>
+<suite id="s1-s2" name="Invalid User" source="C:\Users\inter\Desktop\kabum_tests\tests\invalid_user.robot">
+<test id="s1-s2-t1" name="Cenário: Erro ao tentar efetuar login com usuárioe/ou senha inválidos">
+<kw name="Abrir navegador" library="resource" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=googlechrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20211227 10:14:46.804" level="INFO">Opening browser 'googlechrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20211227 10:14:46.804" endtime="20211227 10:14:47.971"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20211227 10:14:47.971" endtime="20211227 10:14:48.093"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${base_url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20211227 10:14:48.093" level="INFO">Opening url 'https://www.kabum.com.br/'</msg>
+<status status="PASS" starttime="20211227 10:14:48.093" endtime="20211227 10:14:52.273"/>
+</kw>
+<status status="PASS" starttime="20211227 10:14:46.804" endtime="20211227 10:14:52.273"/>
+</kw>
+<kw name="Dado que esteja na página de login" library="login">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${login_url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20211227 10:14:52.275" level="INFO">Opening url 'https://www.kabum.com.br/login'</msg>
+<status status="PASS" starttime="20211227 10:14:52.274" endtime="20211227 10:14:54.403"/>
+</kw>
+<status status="PASS" starttime="20211227 10:14:52.274" endtime="20211227 10:14:54.404"/>
+</kw>
+<kw name="Quando tentar efetuar um login com usuário e/ou senha inválidos" library="login">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=${input_user}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211227 10:14:54.409" endtime="20211227 10:14:54.454"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>locator=${input_user}</arg>
+<arg>text=37839418813</arg>
+<arg>clear=True</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211227 10:14:54.454" level="INFO">Typing text '37839418813' into text field 'id=inputUsuarioLogin'.</msg>
+<status status="PASS" starttime="20211227 10:14:54.454" endtime="20211227 10:14:54.616"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>locator=${input_password}</arg>
+<arg>text=asdf</arg>
+<arg>clear=True</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211227 10:14:54.617" level="INFO">Typing text 'asdf' into text field 'id=inputSenhaLogin'.</msg>
+<status status="PASS" starttime="20211227 10:14:54.616" endtime="20211227 10:14:54.752"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>locator=${btn_enter}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20211227 10:14:54.753" level="INFO">Clicking button 'id=botaoLogin'.</msg>
+<status status="PASS" starttime="20211227 10:14:54.752" endtime="20211227 10:14:54.859"/>
+</kw>
+<status status="PASS" starttime="20211227 10:14:54.408" endtime="20211227 10:14:54.859"/>
+</kw>
+<kw name="Entao uma mensagem &quot;Dados inválidos, tente novamente!&quot; é apresentada ao usuário" library="login" sourcename="Entao uma mensagem &quot;${msg}&quot; é apresentada ao usuário">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${msg_login_failed}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211227 10:14:54.860" endtime="20211227 10:14:55.122"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${msg_login_failed}</arg>
+<arg>${msg}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20211227 10:14:55.122" level="INFO">Verifying element 'xpath=//*[@id="formLogin"]/div[1]/div[2]/div/div[2]' contains exact text 'Dados inválidos, tente novamente!'.</msg>
+<status status="PASS" starttime="20211227 10:14:55.122" endtime="20211227 10:14:55.143"/>
+</kw>
+<status status="PASS" starttime="20211227 10:14:54.860" endtime="20211227 10:14:55.143"/>
+</kw>
+<kw name="Fechar navegador" library="resource" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20211227 10:14:55.144" endtime="20211227 10:14:57.316"/>
+</kw>
+<status status="PASS" starttime="20211227 10:14:55.143" endtime="20211227 10:14:57.316"/>
+</kw>
+<status status="PASS" starttime="20211227 10:14:46.803" endtime="20211227 10:14:57.317"/>
+</test>
+<status status="PASS" starttime="20211227 10:14:46.795" endtime="20211227 10:14:57.318"/>
+</suite>
+<suite id="s1-s3" name="Product In The Cart" source="C:\Users\inter\Desktop\kabum_tests\tests\product_in_the_cart.robot">
+<test id="s1-s3-t1" name="Cenário: Busca de produtos">
+<kw name="Abrir navegador" library="resource" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=googlechrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20211227 10:14:57.327" level="INFO">Opening browser 'googlechrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20211227 10:14:57.327" endtime="20211227 10:14:58.521"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20211227 10:14:58.521" endtime="20211227 10:14:58.650"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${base_url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20211227 10:14:58.651" level="INFO">Opening url 'https://www.kabum.com.br/'</msg>
+<status status="PASS" starttime="20211227 10:14:58.650" endtime="20211227 10:15:02.048"/>
+</kw>
+<status status="PASS" starttime="20211227 10:14:57.326" endtime="20211227 10:15:02.048"/>
+</kw>
+<kw name="Dado estar na página inicial do site" library="home">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${base_url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20211227 10:15:02.050" level="INFO">Opening url 'https://www.kabum.com.br/'</msg>
+<status status="PASS" starttime="20211227 10:15:02.050" endtime="20211227 10:15:04.266"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>code=document.querySelector("#onetrust-accept-btn-handler").click()</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20211227 10:15:04.267" level="INFO">Executing JavaScript:
+code=document.querySelector("#onetrust-accept-btn-handler").click()
+Without any arguments.</msg>
+<status status="PASS" starttime="20211227 10:15:04.266" endtime="20211227 10:15:04.325"/>
+</kw>
+<status status="PASS" starttime="20211227 10:15:02.049" endtime="20211227 10:15:04.326"/>
+</kw>
+<kw name="Quando entrar em Departamentos - Games - Jogos - XBox One" library="home">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${base_url}gamer</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20211227 10:15:04.330" level="INFO">Opening url 'https://www.kabum.com.br/gamer'</msg>
+<status status="PASS" starttime="20211227 10:15:04.329" endtime="20211227 10:15:05.952"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>css=#blocoCategoriasListagem &gt; div:nth-child(5) &gt; a</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211227 10:15:05.953" endtime="20211227 10:15:06.333"/>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>css=#blocoCategoriasListagem &gt; div:nth-child(5) &gt; a</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20211227 10:15:06.334" level="INFO">Clicking link 'css=#blocoCategoriasListagem &gt; div:nth-child(5) &gt; a'.</msg>
+<status status="PASS" starttime="20211227 10:15:06.333" endtime="20211227 10:15:08.299"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>css=#blocoCategoriasListagem &gt; div &gt; a</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211227 10:15:08.299" endtime="20211227 10:15:08.353"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css=#blocoCategoriasListagem &gt; div &gt; a</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211227 10:15:08.354" level="INFO">Clicking element 'css=#blocoCategoriasListagem &gt; div &gt; a'.</msg>
+<status status="PASS" starttime="20211227 10:15:08.354" endtime="20211227 10:15:10.311"/>
+</kw>
+<status status="PASS" starttime="20211227 10:15:04.328" endtime="20211227 10:15:10.311"/>
+</kw>
+<kw name="E clicar no jogo &quot;Jogo Dark Alliance - Xbox&quot;" library="home" sourcename="E clicar no jogo &quot;${game_name}&quot;">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>partial link=${game_name}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211227 10:15:10.312" level="INFO">Clicking element 'partial link=Jogo Dark Alliance - Xbox'.</msg>
+<status status="PASS" starttime="20211227 10:15:10.312" endtime="20211227 10:15:12.407"/>
+</kw>
+<status status="PASS" starttime="20211227 10:15:10.312" endtime="20211227 10:15:12.407"/>
+</kw>
+<kw name="E adiconar o produto no carrinho" library="home">
+<kw name="Set Browser Implicit Wait" library="SeleniumLibrary">
+<arg>2</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20211227 10:15:12.408" endtime="20211227 10:15:12.410"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${add_to_cart}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211227 10:15:12.411" level="INFO">Clicking element 'xpath=//button[normalize-space()='COMPRAR']//*[name()='svg']'.</msg>
+<status status="PASS" starttime="20211227 10:15:12.410" endtime="20211227 10:15:12.575"/>
+</kw>
+<status status="PASS" starttime="20211227 10:15:12.408" endtime="20211227 10:15:12.575"/>
+</kw>
+<kw name="Entao o usuário receberá a mensagem &quot;PRODUTO ADICIONADO NO CARRINHO&quot;" library="home" sourcename="Entao o usuário receberá a mensagem &quot;${confirmed_add_to_cart}&quot;">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${msg_add_to_cart}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211227 10:15:12.576" endtime="20211227 10:15:14.013"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${msg_add_to_cart}</arg>
+<arg>${confirmed_add_to_cart}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20211227 10:15:14.015" level="INFO">Verifying element 'css=div[class='sc-lbhJGD eDxwLC'] strong' contains exact text 'PRODUTO ADICIONADO NO CARRINHO'.</msg>
+<status status="PASS" starttime="20211227 10:15:14.015" endtime="20211227 10:15:14.167"/>
+</kw>
+<status status="PASS" starttime="20211227 10:15:12.576" endtime="20211227 10:15:14.167"/>
+</kw>
+<kw name="Quando entrar no carrinho" library="home">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${go_to_cart}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211227 10:15:14.167" endtime="20211227 10:15:14.184"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${go_to_cart}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211227 10:15:14.184" level="INFO">Clicking element 'xpath=//button[normalize-space()='IR PARA O CARRINHO']'.</msg>
+<status status="PASS" starttime="20211227 10:15:14.184" endtime="20211227 10:15:15.973"/>
+</kw>
+<status status="PASS" starttime="20211227 10:15:14.167" endtime="20211227 10:15:15.974"/>
+</kw>
+<kw name="Entao o jogo &quot;Jogo Dark Alliance - Xbox&quot; estará na página do carrinho" library="home" sourcename="Entao o jogo &quot;${game_name}&quot; estará na página do carrinho">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>partial link=${game_name}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211227 10:15:15.975" endtime="20211227 10:15:16.018"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>partial link=${game_name}</arg>
+<arg>${game_name}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20211227 10:15:16.018" level="INFO">Verifying element 'partial link=Jogo Dark Alliance - Xbox' contains exact text 'Jogo Dark Alliance - Xbox'.</msg>
+<status status="PASS" starttime="20211227 10:15:16.018" endtime="20211227 10:15:16.040"/>
+</kw>
+<status status="PASS" starttime="20211227 10:15:15.974" endtime="20211227 10:15:16.040"/>
+</kw>
+<kw name="Fechar navegador" library="resource" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20211227 10:15:16.041" endtime="20211227 10:15:18.214"/>
+</kw>
+<status status="PASS" starttime="20211227 10:15:16.041" endtime="20211227 10:15:18.214"/>
+</kw>
+<status status="PASS" starttime="20211227 10:14:57.326" endtime="20211227 10:15:18.215"/>
+</test>
+<status status="PASS" starttime="20211227 10:14:57.320" endtime="20211227 10:15:18.219"/>
+</suite>
+<status status="PASS" starttime="20211227 10:14:34.453" endtime="20211227 10:15:18.221"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="3" fail="0" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Iphone Search">Tests.Iphone Search</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s2" name="Invalid User">Tests.Invalid User</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s3" name="Product In The Cart">Tests.Product In The Cart</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

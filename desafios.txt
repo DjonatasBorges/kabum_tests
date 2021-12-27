@@ -1,0 +1,21 @@
+1 - Defina os 3 tipos de testes citados abaixo.
+- Teste unitário
+- Teste de Integração
+- Teste de UI
+2 - Analise e descreva qual a importância da qualidade de software hoje. E quais os riscos
+sem ela dentro de um e-commerce.
+3 - Passe o método “Passo a Passo”, para o método escrito na linguagem Gherkin:
+Cenário - Busca por produto
+1ª - Abrir a home do site
+2ª - Digitar “Processador i9” na busca e clicar em pesquisar.
+3ª - Validar se existe produto na listagem
+4 - Descreva a respeito de TDD(Test Driven Development) e BDD(Behavior Driven
+Development) e suas diferenças.
+5 - O que são Page Objects e qual sua vantagem?
+6 - Faça uma teste com Robot Framework, utilizando boas práticas de automação com a
+Library Selenium dos seguintes cenários:
+- Fazer validação de um usuário inválido no https://kabum.com.br.
+- Fazer a busca de iphone no https://kabum.com.br. E validar retorno de produtos.
+- Selecione uma categoria no menu de “Departamento” e adicione um produto no
+carrinho (Não precisa estar logado). E valide se o produto está no carrinho.
+OBS: Subir no Github e compartilhar o link do repositório.
