@@ -1,11 +1,11 @@
 <h1>Perguntas e respostas do Teste</h1>
 
-***1 - Defina os 3 tipos de testes citados abaixo.***
+**1 - Defina os 3 tipos de testes citados abaixo.**<br>
     * Teste unitário
     * Teste de Integração
     * Teste de UI
     O **Teste Unitário** é uma verificação feita em uma pequena parte do código e/ou sistema. Tem como objetivo encontrar
-falhas nessas pequenas partes.
+falhas nessas pequenas partes.<br>
     O **Teste de Integração** é a fase do teste de software em que módulos são combinados e testados em grupo. Ele valida a
 comunicação entre os componentes do sistema.
     **Teste unitário e Teste de integração são feitos pelos desenvolvedores**
