@@ -55,8 +55,5 @@ Library Selenium dos seguintes cenários:
 carrinho (Não precisa estar logado). E valide se o produto está no carrinho.
 
 
-OBS: Queria apenas informar que não tinha até a data do teste feito algum exercício com Robot, sabia apenas de forma rasa
-sobre seus conceitos.
-Tentei da melhor forma possível executar o teste.
-Como estou acostumado com behave e selenium, sinceramente, me surpreendeu muito o poder e a simplicidade desse framework
-Obrigado pela atenção e espero um até breve.
+OBS: Até o momento minhas experiências em automação de testes em front-end eram usando as bibliotecas Selenium Webdriver e Behave, já no back-end minhas experiências são com Flask e SqlAlchemy. Todas são utilizando a linguagem de programação Python.<br>
+Esse foi meu primeiro contato com o Robotframework. Ferramenta que gostei e com toda certeza gostarei muito de aprender.
