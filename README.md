@@ -3,7 +3,7 @@
 <p><b>1 - Defina os 3 tipos de testes citados abaixo.</b><br>
     * Teste unitário<br>
     * Teste de Integração<br>
-    * Teste de UI<br>
+    * Teste de UI<br><br>
     O <b>Teste Unitário</b> é uma verificação feita em uma pequena parte do código e/ou sistema. Tem como objetivo encontrar
 falhas nessas pequenas partes.<br><br>
     O <b>Teste de Integração</b> é a fase do teste de software em que módulos são combinados e testados em grupo. Ele valida a
@@ -54,3 +54,10 @@ executar métodos específicos de cada componente ou page.</p><br><br>
     - Fazer a busca de iphone no https://kabum.com.br. E validar retorno de produtos.<br>
     - Selecione uma categoria no menu de “Departamento” e adicione um produto no
 carrinho (Não precisa estar logado). E valide se o produto está no carrinho.</p><br><br>
+
+ <p>OBS:<br>
+     Queria apenas informar que não tinha até a data do teste feito algum exercício com Robot, sabia apenas de forma rasa
+ sobre seus conceitos.
+ Tentei da melhor forma possível executar o teste.
+ Como estou acostumado com behave e selenium, sinceramente, me surpreendeu muito o poder e a simplicidade desse framework
+ Obrigado pela atenção e espero um até breve.</p>
